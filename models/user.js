@@ -107,6 +107,26 @@ User.updateUsers = (iuser) => {
   ]);
 }
 
+/// inactivar usario  como si fuera un delete
+User.UserModStatus = (id) => {
+  sql = `UPDATE  USUARIOS
+            SET is_active = false,
+            modif_at  = $2
+            WHERE id= $1`;
+  return DB.result(sql,[id, new Date()]).then(result => {
+    if (result.rowCount > 0)
+      console.log('El registro se actualizó correctamente');
+      else
+      console.log('No se encontró ningún registro para actualizar con el ID:', result);
+      
+    return result;
+  })
+  .catch(error => {
+    console.error('Ocurrió un error al actualizar el registro:', error);
+    throw error; 
+    });
+  
+}
 //set token de sesion by user id 
 
 User.updateTokenSession = (id, token) => {

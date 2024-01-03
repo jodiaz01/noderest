@@ -103,8 +103,8 @@ luego intentar y descomentar
 # endRegion Posible error -----------------------------
 
 
-# region Pruebas urls{ 
- [
+# region Pruebas urls
+{(
  `1- -----obtner lista de usuarios -------- ` 
     `**Request GET: No incluyte parametross**`   
     127.0.0.1:3000/api/users 
@@ -151,5 +151,5 @@ luego intentar y descomentar
    `en el header especificar el token o session token `
    Authorization  = JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoibm9kZXNlcnYiLCJ2ZXJzaW9uIjoiMS4wLjEiLCJkYXRlIjoyMDI0LCJvd25lciI6ImpkaWF6IiwiaWF0IjoxNzA0MjE4NjA3LCJleHAiOjE3MDQzMDUwMDd9.-ltBlPzl1u0mdyuuGsLMVY__69UG1mP49sO7tvC35Rw
 
- ]
-}
+)}
+#  endregion ---------------- 

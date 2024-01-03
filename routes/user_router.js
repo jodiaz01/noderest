@@ -5,7 +5,9 @@ const {
     createUserControllers,
     loginControllers,
     updateUserControllers,
-    getUserByID
+    getUserByID,
+    InativeUserController,
+    logoutWithToken
     } = require('../controllers/user_controller')
 
 const routes = Router();
@@ -13,8 +15,10 @@ const routes = Router();
 
 routes.get('/api/users', getAllControllers);
 routes.get('/api/usersID/:id', passport.authenticate('jwt', {session:false}),  getUserByID);
+routes.get('/api/logout/:id/:token',  logoutWithToken);
 routes.post('/api/newusers', createUserControllers);
-routes.put('/api/update', updateUserControllers);
 routes.post('/api/login', loginControllers);
+routes.put('/api/update', updateUserControllers);
+routes.put('/api/inactive/:id', InativeUserController );
 
 module.exports = routes
